@@ -13,8 +13,10 @@ define([
     'backbone',
     'nprogress',
     'text!js/templates/base/BaseTpl.tpl',
-    'js/views/header/HeaderView'
-], function($, _, Backbone, NProgress, BaseTpl, HeaderView) {
+    'js/views/header/HeaderView',
+    'js/views/home/HomeView',
+    'js/views/profile/ProfileView'
+], function($, _, Backbone, NProgress, BaseTpl, HeaderView, HomeView, ProfileView) {
 
     var BaseView = Backbone.View.extend({
 
@@ -55,7 +57,25 @@ define([
             this.$('.main-header').html(this.headerView.el);
             this._childViews.push(this.headerView);
 
+        },
+
+        renderHomeScreen: function() {
+            if (this.homeView) {
+                this.homeView.close();
+            }
+            this.homeView = new HomeView();
+            this.$('.wrapper').html(this.homeView.el);
+            this._childViews.push(this.homeView);
             NProgress.done();
+        },
+
+        renderProfileScreen: function() {
+            if (!this.profileView) {
+                this.profileView = new ProfileView();
+                this.$('.wrapper').html(this.profileView.el);
+                this._childViews.push(this.profileView);
+                NProgress.done();
+            }
 
         }
 

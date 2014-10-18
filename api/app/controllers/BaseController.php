@@ -22,7 +22,7 @@ class BaseController extends Controller {
 		foreach ($input as $key => $value) {
 			$payloadArray[$key] = $value;
 		}
-		var_dump($payloadArray);
+		//var_dump($payloadArray);
 		return $payloadArray;
 	}
 }

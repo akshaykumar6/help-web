@@ -10,16 +10,19 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::post(	'user/login', 'UserController@login'	);
+
+Route::get(	'category', 'CategoryController@read'	);
 
 Route::post(	'user', 'UserController@create'	);
-Route::put(		'user', 'UserController@update' );
+Route::put(		'user/{id}', 'UserController@update' );
 Route::get(		'user/{id}', 'UserController@read'	);
 
 
 Route::post(	'event', 		  'NgoEventController@create'	);
 Route::get(		'event/all/{id}', 'NgoEventController@readAll'		);
 Route::get(		'event/{id}', 	  'NgoEventController@read'		);
-Route::put(		'event', 		  'NgoEventController@update'	);
+Route::put(		'event', 		  'NgoEventController@update');
 Route::delete(	'event/{id}', 	  'NgoEventController@delete'	);
 
 Route::post(	'need', 		  'NeedController@create'	);

@@ -23,3 +23,11 @@
 	width: 100%;
 	background-color: #6AC4EB;
 }
+.wrapper{
+	height: 90%;
+	margin-top: -20px;
+	overflow-y: auto;
+}
+.add-box{
+	margin: 10px !important;
+}

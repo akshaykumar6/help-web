@@ -32,7 +32,8 @@ require.config({
         'backbone': 'com/ext/backbone/backbone-min',
         'bootstrap': 'com/ext/bootstrap/js/bootstrap.min',
         'text': 'com/ext/require/text',
-        'nprogress': 'com/ext/nprogress/nprogress'
+        'nprogress': 'com/ext/nprogress/nprogress',
+        'chosen': 'com/ext/chosen/chosen.jquery.min'
     },
     'shim': {
         'underscore': {
@@ -69,23 +70,26 @@ require([
 ], function($, _, Backbone, Bootstrap, AppRouter, NProgress) {
 
     $(document).ready(function() {
-        APP = {};
-        APP.router = new AppRouter();
+
+        Backbone.View.prototype._childViews = [];
+        Backbone.View.prototype.close = function() {
+            this.remove();
+            this.unbind();
+            if (this._childViews) {
+                _.each(this._childViews, function(childView) {
+                    if (childView.close) {
+                        childView.close();
+                    }
+                });
+            }
+        };
+
+        window.KAPP = {};
+        window.KAPP.router = new AppRouter();
         Backbone.history.start();
     });
 
-    Backbone.View.prototype._childViews = [];
-    Backbone.View.prototype.close = function() {
-        this.remove();
-        this.unbind();
-        if (this._childViews) {
-            _.each(this._childViews, function(childView) {
-                if (childView.close) {
-                    childView.close();
-                }
-            });
-        }
-    };
+
 
 
 });

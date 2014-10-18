@@ -20,7 +20,9 @@ define([
 
         className: "page-header-cnt",
 
-        events: {},
+        events: {
+            'click .navbar-brand': 'onHomeClicked'
+        },
 
 
         initialize: function(options) {
@@ -34,6 +36,13 @@ define([
         render: function() {
 
             this.$el.html(this.template());
+        },
+
+        onHomeClicked: function(e) {
+            e.preventDefault();
+            KAPP.router.navigate('', {
+                trigger: true
+            });
         }
 
     });

@@ -5,7 +5,7 @@ class NgoEventController extends BaseController {
 	public static function create()
 	{
 		$payloadArray = self::getAllParam();
-		var_dump($payloadArray);
+		//var_dump($payloadArray);
 		try{
 			$payloadArray['ngoEventID'] = NgoEvent::insertGetId(
 										array('nevnt_ngo_id' => $payloadArray['ngoID'],

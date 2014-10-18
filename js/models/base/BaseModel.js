@@ -4,13 +4,12 @@ define([
     'backbone'
 ], function($, _, Backbone) {
 
-    var CaseModel = Backbone.Model.extend({
+    var BaseModel = Backbone.Model.extend({
 
         urlRoot: '',
 
-        defaults: {
-        }
+        defaults: {}
     });
 
-    return CaseModel;
+    return BaseModel;
 });

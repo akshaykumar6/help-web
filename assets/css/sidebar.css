@@ -1,0 +1,21 @@
+.sidebar-list{
+	list-style-type: none;
+	padding: 0;
+}
+.sidebar-list li{
+	padding: 10px;
+	border: solid #e3e3e3;
+	border-width: 1px 0;
+}
+.sidebar-list li:hover{
+	background-color: #c4e8f7;
+}
+.sidebar-list li.active{
+	background-color: #1fa6e1;
+}
+.sidebar-list li.active a{
+	color: white !important;
+}
+.sidebar-cnt{
+	padding-right: 0px !important;
+}

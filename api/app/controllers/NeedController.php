@@ -5,7 +5,7 @@ class NeedController extends BaseController {
 	public static function create()
 	{
 		$payloadArray = self::getAllParam();
-		var_dump($payloadArray);
+		//var_dump($payloadArray);
 		try{
 			$payloadArray['ngoNeedID'] = Need::insertGetId(
 										array('nneed_ngo_id' => $payloadArray['ngoID'],

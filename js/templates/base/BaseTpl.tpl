@@ -1,7 +1,7 @@
 <div class="main-header">
 	
 </div>
-<div class="wrapper container">
+<div class="wrapper container-fluid">
 	
 </div>
 <div class="main-footer">

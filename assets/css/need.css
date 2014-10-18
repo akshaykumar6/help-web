@@ -1,0 +1,11 @@
+.need-box-item{
+	padding: 5px !important;
+	margin: 10px 0 !important;
+}
+.need-action-cnt{
+	margin: 10px 0;
+	width: 100%;
+}
+.need-action-cnt button{
+	width: 100%;
+}

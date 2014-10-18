@@ -1,0 +1,24 @@
+.home-cnt, .home-img-cnt{
+	height: 100%;
+}
+.home-img-cnt{
+	background-image: url('../images/home-img-1.jpg');
+	background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+}
+.login-tabs-list li{
+	width: 50%;
+}
+.login-tabs-list{
+	margin-top: 21%;
+}
+.login-tabs{
+	border: solid #ddd;
+	border-width: 0 1px 1px 1px;
+	padding: 15px;
+	background-color: white;
+	min-height: 290px;
+}
+.login-tabs-list li a{
+	background-color: #f2f2f2;
+}
