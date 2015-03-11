@@ -1,0 +1,32 @@
+NGO -Register : 
+
+		{
+			"userName" 		 : "",
+
+			"password" 		 : "",
+
+			"ngoUserName"      : "",
+
+			"userAddress"  	 : "",
+
+			"userCity"     	 : "",
+
+			"userDesc"      	 : "",
+
+			"userLatitude"  	 : "" ,
+
+			"userLongitude"    : ""
+		}
+
+Event-Post  :
+		 {
+		 	"ngoID" 				: "",
+		 	"eventTitle" 			: "",
+		 	"eventDesc" 			: "",
+		 	"eventDate" 			: "",
+		 	"eventTime" 			: "",
+		 	"eventVenueDesc" 		: "",
+		 	"eventVenueLatitude" 	: "",
+		 	"eventVenueLongitude" 	: "",
+		 		
+		 }

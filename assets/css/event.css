@@ -1,0 +1,11 @@
+.event-box-item{
+	padding: 5px !important;
+	margin: 10px 0 !important;
+}
+.evnt-action-cnt{
+	margin: 10px 0;
+	width: 100%;
+}
+.evnt-action-cnt button{
+	width: 100%;
+}

@@ -1,0 +1,46 @@
+Simulation 					//Gives a key value mapping to all the simulations
+	sim_id 					//PRIMARY KEY
+	sim_name 				//Simulation Name
+
+Question Types 				//Defining the types of question, such as MCQ with Single, Multiple, Rating, and Comment Answers
+	qtype_id 				//PRIMARY KEY
+	qtype_description 		//Question Type Description
+
+Question 					//Defining new questions
+	ques_id 				//PRIMARY KEY
+	ques_qtype_id 			//FOREIGN KEY to Question Type
+	ques_sur_id 			//FOREIGN KEY to the Survey ID it is associated to
+	ques_description 		//The Question
+
+Question Options
+	qopt_id 				//PRIMARY KEY
+	qopt_ques_id			//FOREIGN KEY to the question it belongs to
+	qopt_description		//The Option
+
+Survey 						//A new survey targeting a simulation
+	sur_id 					//PRIMARY KEY
+	sur_name		 		//Survey Name
+	sur_description 		//Survey Description
+	sur_is_sample 			//Flag to check if the collection can be reued to create new collection
+	sur_sim_id				//FOREIGN KEY to the sim ID
+
+Simulation User 			//A user list based on the simID and sim user ID
+	suser_id 				//PRIMARY KEY
+	suser_sim_user_id 		//The user ID used in the simulation
+	suser_sim_id 			//FOREIGN KEY to the sim ID which the user is a part of
+	suser_sur_id 			//FOREIGN KEY to the survey ID which the user is answering
+	suser_feedback_complete //If the user has completed the feedback: -1=>Incomplete, 0=>in Progress, 1=>Completed
+	suser_start_timestamp 	//When the user started, ie, when this entry was made
+	suser_update_timestamp 	//When the user last updated the survey
+
+User Question Answer 		//All the questions which the user has to answer will have an entry here
+	uqa_id 					//PRIMARY KEY
+	uqa_suser_id 			//FOREIGN KEY to the user ID - simulation ID primary key
+	uqa_ques_id 			//FOREIGN KEY to the question ID
+	uqa_comment				//Comment Based Answer
+	uqa_rating				//Rating Based Answer
+
+User Question Option Answers 	//All user MCQ answers
+	uqoa_id 					//PRIMARY KEY
+	uqoa_uqva_id 				//FOREIGN KEY to the user ID - simulation ID primary key
+	uqoa_qopt_id 				//FOREIGN KEY to the option ID

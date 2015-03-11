@@ -1,0 +1,410 @@
+Admin mode
+	-- Create/Edit/Delete/View simulation.
+	-- Create/Delete/Edit/View Survey
+	-- Link/Unlink a survey to particular simulation.
+	-- Analyze the responses per simulation per collection
+		-- Aggregate view
+		-- Per user view
+
+User mode
+	-- User request for a survey
+	-- User submits the response for the survey
+		-- May be email will be send to a particular email id on submit.
+	-- User checks whether the participant has given the feedback for the collection or not.
+
+BASE URL: feedback.knolskape.com/V1/
+
+Simulation:
+	GET /simulation
+		Output:
+			[
+			    {
+			        "simulationID"		: 12,
+			        "simulationName"	: "F1"
+			    },
+			    {
+			        "simulationID"		: 13,
+			        "simulationName"	: "Hello"
+			    }
+			]
+
+	GET /simulation/{simID}
+		Output:
+			{
+			    "simulationID"		: 13,
+			    "simulationName"	: "Hello"
+			}
+
+	POST /simulation
+		Input:
+			{
+				"simulationName": "Hello"
+			}
+		Output:
+			{
+			    "simulationName"	: "Hello",
+			    "simulationID"		: 14
+			}
+
+	PUT /simulation/{simID}
+		Input:
+			{
+				"simulationName": "Sim5"
+			}
+		Output:
+			{
+			    "status": "success"
+			}
+
+	DELETE /simulation/{simID}
+		Output:
+			{
+			    "status": "success"
+			}
+
+Survey:
+	GET /survey
+		Output:
+			[
+			    {
+			        "surveyName": "Sample Survey",
+			        "surveyDescription": "This is a Sample Survey",
+			        "surveyIsSample": 0,
+			        "surveyID": 27,
+			        "surveyDetails": [
+			            {
+			                "question": "How was the overall simulation experience?",
+			                "questionType": 1,
+			                "questionId": 21,
+			                "options": [
+			                    {
+			                        "option": "Good",
+			                        "optionId": 10
+			                    },
+			                    {
+			                        "option": "Average",
+			                        "optionId": 11
+			                    },
+			                    {
+			                        "option": "Bad",
+			                        "optionId": 12
+			                    }
+			                ]
+			            },
+			            {
+			                "question": "Hardness of the simulation? Rate out of 10, 10 being the toughest",
+			                "questionType": 3,
+			                "questionId": 22,
+			                "options": null
+			            },
+			            {
+			                "question": "How can we improve the simulation?",
+			                "questionType": 4,
+			                "questionId": 23,
+			                "options": null
+			            }
+			        ]
+			    },
+			    {
+			        "surveyName": "Sample Survey",
+			        "surveyDescription": "This is a Sample Survey",
+			        "surveyIsSample": 0,
+			        "surveyID": 28,
+			        "surveyDetails": [
+			            {
+			                "question": "How was the overall simulation experience?",
+			                "questionType": 1,
+			                "questionId": 24,
+			                "options": [
+			                    {
+			                        "option": "Good",
+			                        "optionId": 13
+			                    },
+			                    {
+			                        "option": "Average",
+			                        "optionId": 14
+			                    },
+			                    {
+			                        "option": "Bad",
+			                        "optionId": 15
+			                    }
+			                ]
+			            },
+			            {
+			                "question": "Hardness of the simulation? Rate out of 10, 10 being the toughest",
+			                "questionType": 3,
+			                "questionId": 25,
+			                "options": null
+			            },
+			            {
+			                "question": "How can we improve the simulation?",
+			                "questionType": 4,
+			                "questionId": 26,
+			                "options": null
+			            }
+			        ]
+			    }
+			]
+	GET /survey/{surveyID}
+		Output:
+			{
+			    "surveyName": "Sample Survey",
+			    "surveyDescription": "This is a Sample Survey",
+			    "surveyIsSample": 0,
+			    "surveyID": 27,
+			    "surveyDetails": [
+			        {
+			            "question": "How was the overall simulation experience?",
+			            "questionType": 1,
+			            "questionId": 21,
+			            "options": [
+			                {
+			                    "option": "Good",
+			                    "optionId": 10
+			                },
+			                {
+			                    "option": "Average",
+			                    "optionId": 11
+			                },
+			                {
+			                    "option": "Bad",
+			                    "optionId": 12
+			                }
+			            ]
+			        },
+			        {
+			            "question": "Hardness of the simulation? Rate out of 10, 10 being the toughest",
+			            "questionType": 3,
+			            "questionId": 22,
+			            "options": null
+			        },
+			        {
+			            "question": "How can we improve the simulation?",
+			            "questionType": 4,
+			            "questionId": 23,
+			            "options": null
+			        }
+			    ]
+			}
+
+	POST /survey
+		Input:
+			{
+				"surveyName": 			"Sample Survey",
+				"surveyDescription": 	"This is a Sample Survey",
+				"surveyIsSample": 		0,
+				"surveyDetails":
+					[
+						{
+							"question" 		: "How was the overall simulation experience?",
+							"questionType"	: "1",
+							"options"		: 
+								[
+									{
+										"option": "Good"
+									},
+									{
+										"option": "Average"
+									},
+									{
+										"option": "Bad"
+									}
+								]
+						},
+						{
+							"question" 		: "Hardness of the simulation? Rate out of 10, 10 being the toughest",
+							"questionType"	: "3",
+							"options"		: null
+						},
+						{
+							"question" 		: "How can we improve the simulation?",
+							"questionType"	: "4",
+							"options"		: null
+						}
+					]
+			}
+		Output:
+			{
+			    "surveyID"		: "10",
+			    "surveyName"	: "Sample Survey"
+			}
+	PUT /survey/1
+		Input:
+			{
+			    "surveyName": "SampleSurvey",
+			    "surveyDescription": "This is a SampleSurvey",
+			    "surveyIsSample": 0,
+			    "surveyID": 1,
+			    "surveyDetails": [
+			        {
+			            "question": "Question with multiple Options",
+			            "questionType": 1,
+			            "questionId": 1,
+			            "options": [
+			                {
+			                    "option": "Good",
+			                    "optionId": 10
+			                },
+			                {
+			                    "option": "Average",
+			                    "optionId": 11
+			                }
+			            ]
+			        },
+			        {
+			            "question": "Question with single Option",
+			            "questionType": 1,
+			            "options": [
+			                {
+			                    "option": "Good"
+			                }
+			            ]
+			        },
+			        {
+			            "question": "Question with no option",
+			            "questionType": 3,
+			            "options": null
+			        }
+			    ]
+			}
+		Output:
+			{
+			    "surveyName": "SampleSurvey",
+			    "surveyDescription": "This is a SampleSurvey",
+			    "surveyIsSample": 0,
+			    "surveyID": 1,
+			    "surveyDetails": [
+			        {
+			            "question": "Question with multiple Options",
+			            "questionType": 1,
+			            "questionID": 1,
+			            "options": [
+			                {
+			                    "option": "Good",
+			                    "optionId": 10
+			                },
+			                {
+			                    "option": "Average",
+			                    "optionId": 11
+			                }
+			            ]
+			        },
+			        {
+			            "question": "Question with single Option",
+			            "questionType": 1,
+			            "questionID": 2,
+			            "options": [
+			                {
+			                    "option": "Good",
+			                    "optionId": 12
+			                }
+			            ]
+			        },
+			        {
+			            "question": "Question with no option",
+			            "questionID": 3,
+			            "questionType": 3,
+			            "options": null
+			        }
+			    ]
+			}
+	DELETE /survey/{surveyID} 
+		Output:
+			{
+			    "status": "success"
+			}
+
+Linking:
+	GET /link
+		Output:
+			[
+				{
+					simulationID:	10
+					surveyID:		20
+					surveyName:		"First"
+				},
+				{
+					simulationID:	10
+					surveyID:		20
+					surveyName:		"First"
+				}
+			]
+	GET /link/{simID}
+		Output:
+			[
+				{
+					simulationID:	10
+					surveyID:		20
+					surveyName:		"First"
+				},
+				{
+					simulationID:	10
+					surveyID:		20
+					surveyName:		"First"
+				}
+			]
+	POST /link
+		Input:
+			{
+				simulationID:
+				surveyID:
+			}
+		Output:
+			{
+			    "status": "success"
+			}
+	DELETE /link
+		Input:
+			{
+				simulationID:
+				surveyID:
+			}
+		Output:
+			{
+			    "status": "success"
+			}
+
+
+Answers :
+	POST /submitAnswers
+		Input :  {
+			        "surveyID": 27,
+			        "userID":,
+			        "surveyAnswers": [
+			            {
+			                "questionID": 21,
+			                "questionType": 2
+			                "answer": [10, 20, 30]
+			            },
+			            {
+			                "questionType": 3,
+			                "questionID": 22,
+			                "answer": 11
+			            },
+			            {
+			                "questionType": 4,
+			                "questionID": 23,
+			                "answer": "sskfsdkjfkjsdhjsdsdfsdf"
+			            },
+			            {
+			                "questionType": 4,
+			                "questionID": 23,
+			                "answer": "3"
+			            }
+			        ]
+			    }
+		Output : {
+			"status" : "success"
+		}
+
+    DELETE /deleteAnswers
+    	Input : {
+				"simulationID"  : 2 ,
+				"surveyID"		: 5 ,
+                "simUserID"		: 2
+				}
+		Output : {
+			"status" : "success"
+		}	
+
+-- feedback.ks.com/v1/collection/1?simId=1&usr_id=1

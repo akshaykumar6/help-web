@@ -1,0 +1,272 @@
+NGO-User-Register : //post
+
+		{
+			"userName" 		 : "",
+
+			"password" 		 : "",
+
+			"ngoUserName"      : "",
+
+			
+		}
+
+NGO-User-UPDATE ://put
+
+			
+			{
+			"userName" 		   : "",
+
+			"ngoUserName"      : "",
+
+			"userAddress"  	   : "",
+
+			"userCity"     	   : "",
+
+			"userDesc"         : "",
+
+			"userLatitude"     : "" ,
+
+			"userLongitude"    : "" ,
+
+			"contact"		   : "",
+
+			"email"		  	   : "",
+
+			"website"		   : "",
+
+			"category"			: [{
+
+									},
+									{
+									
+									}]
+
+			}
+			
+
+NGO-User-READ ://get
+
+			
+			{
+
+			"ngoUserID"        : "",
+
+			"password"         : "",
+
+			"userName" 		   : "",
+
+			"ngoUserName"      : "",
+
+			"userAddress"  	   : "",
+
+			"userCity"     	   : "",
+
+			"userDesc"         : "",
+
+			"userLatitude"     : "" ,
+
+			"userLongitude"    : "" ,
+
+			"contact"		   : "",
+
+			"email"		  	   : "",
+
+			"website"		   : "",
+
+			"category"			: [{
+
+									},
+									{
+
+									}]
+
+			}
+			
+Event-Create-Post  :
+		 {
+		 	"ngoID" 				: "",
+
+		 	"eventTitle" 			: "",
+
+		 	"eventDesc" 			: "",
+
+		 	"eventDate" 			: "",
+
+		 	"eventTime" 			: "",
+
+		 	"eventVenueDesc" 		: "",
+
+		 	"eventVenueLatitude" 	: "",
+
+		 	"eventVenueLongitude" 	: "",
+		 		
+		 }
+
+
+
+
+Event-Update //put
+
+
+		  {
+
+		  	"ngoEventID"			: "",
+
+		 	"ngoID" 				: "",
+
+		 	"eventTitle" 			: "",
+
+		 	"eventDesc" 			: "",
+
+		 	"eventDate" 			: "",
+
+		 	"eventTime" 			: "",
+
+		 	"eventVenueDesc" 		: "",
+
+		 	"eventVenueLatitude" 	: "",
+		 	
+		 	"eventVenueLongitude" 	: "",
+		 		
+		 }
+
+Event-Delete //delete
+	
+
+Event-Read-{ID} //get
+
+			 {
+
+		  	"ngoEventID"			: "",
+
+		 	"ngoID" 				: "",
+
+		 	"eventTitle" 			: "",
+
+		 	"eventDesc" 			: "",
+
+		 	"eventDate" 			: "",
+
+		 	"eventTime" 			: "",
+
+		 	"eventVenueDesc" 		: "",
+
+		 	"eventVenueLatitude" 	: "",
+		 	
+		 	"eventVenueLongitude" 	: "",
+		 		
+		 }
+
+Event-Read-All-{Ngo ID} //get
+
+			 {
+
+		  	"ngoEventID"			: "",
+
+		 	"ngoID" 				: "",
+
+		 	"eventTitle" 			: "",
+
+		 	"eventDesc" 			: "",
+
+		 	"eventDate" 			: "",
+
+		 	"eventTime" 			: "",
+
+		 	"eventVenueDesc" 		: "",
+
+		 	"eventVenueLatitude" 	: "",
+		 	
+		 	"eventVenueLongitude" 	: "",
+		 		
+		 }, 
+		 {
+		 	"ngoEventID"			: "",
+
+		 	"ngoID" 				: "",
+
+		 	"eventTitle" 			: "",
+
+		 	"eventDesc" 			: "",
+
+		 	"eventDate" 			: "",
+
+		 	"eventTime" 			: "",
+
+		 	"eventVenueDesc" 		: "",
+
+		 	"eventVenueLatitude" 	: "",
+		 	
+		 	"eventVenueLongitude" 	: "",
+		 }
+
+Need-Create-Post  :
+		 {
+		 	"ngoID" 				: "",
+
+		 	"needTitle" 			: "",
+
+		 	"needDesc" 			    : ""
+
+		 		
+		 }
+
+
+
+
+Event-Update //put
+
+
+		   {
+		   	"ngoNeedID"				: "",
+
+		 	"ngoID" 				: "",
+
+		 	"needTitle" 			: "",
+
+		 	"needDesc" 			    : ""
+
+		 		
+		 }
+
+Event-Delete //delete
+	
+
+Event-Read-{ID} //get
+
+			 {
+		 	"ngoID" 				: "",
+
+		 	"needTitle" 			: "",
+
+		 	"needDesc" 			    : ""
+
+		 		
+		 }
+
+Event-Read-All-{Ngo ID} //get
+	  {
+		   	"ngoNeedID"				: "",
+
+		 	"ngoID" 				: "",
+
+		 	"needTitle" 			: "",
+
+		 	"needDesc" 			    : ""
+
+		 		
+		 },
+		   {
+		   	"ngoNeedID"				: "",
+
+		 	"ngoID" 				: "",
+
+		 	"needTitle" 			: "",
+
+		 	"needDesc" 			    : ""
+
+		 		
+		 }
+
+
+
